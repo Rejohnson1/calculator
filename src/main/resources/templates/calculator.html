@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<title>Simple Calculator</title>
+</head>
+<h2> <u> Calculator Project </u></h2>
+<form action="/calculator" method="post">
+	Enter Number:<input name="firstNumber" type="number" required> 
+	<br>
+	<br>
+	 Select Option: <select name="operator">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>^</option>
+	</select>
+	<br>
+	<br>
+	Enter Number: <input name="secondNumber" type="number" required>
+	<br>
+	<button>Calculate</button>
+<p> 
+<br>
+<h2> <u>  Calculation History </u> </h2>
+{{#store.storeCalcs}}
+<table>
+		<tbody>
+			<tr>
+				<td> <b> # {{ -index }} : </b> </td>
+				<td>{{ firstNumber }}</td>
+				<td>{{ operator }}</td>
+				<td>{{ secondNumber }} = </td>
+				<td>{{ result }}</td>
+		{{/store.storeCalcs}}
+</tbody>
+</table>
+</form>
+</body>
+</html>
